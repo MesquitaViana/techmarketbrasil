@@ -270,23 +270,27 @@ body.dark-theme .theme-toggle {
     color: var(--text-muted);
 }
 
-/* Responsividade */
-@media (max-width: 480px) {
+/* ==== MOBILE FIX (somente abaixo de 768px) ==== */
+@media (max-width: 768px) {
+    body {
+        display: block !important;        /* remove centralização vertical */
+        padding: 24px 16px !important;    /* dá respiro no topo e embaixo */
+        height: auto !important;
+        min-height: auto !important;
+        overflow-y: auto !important;      /* garante scroll no mobile */
+    }
+
+    html {
+        height: auto !important;
+    }
+
+    .page {
+        margin: 0 auto;
+        padding-bottom: 40px;             /* evita cortar footer/ícones */
+    }
+
     .profile-card {
-        padding: 24px 16px 18px;
-    }
-
-    .avatar {
-        width: 96px;
-        height: 96px;
-    }
-
-    .name {
-        font-size: 20px;
-    }
-
-    .link-btn {
-        font-size: 14px;
-        padding: 12px 14px;
+        margin-top: 0;
+        margin-bottom: 32px;
     }
 }
